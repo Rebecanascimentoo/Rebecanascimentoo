@@ -4,17 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rebeca Rodrigues do Nascimento</title>
+    <style>
+        /* ====== ESTILO GERAL ====== */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007BFF, #00C6FF);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007BFF;
+            border-left: 5px solid #007BFF;
+            padding-left: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #e9f2ff;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            background: #007BFF;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* ===== BOTÃO INTERATIVO ===== */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background: #007BFF;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* ===== ANIMAÇÃO ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    <h1>Apresentação: Rebeca Rodrigues do Nascimento</h1>
-    <p>Olá, meu nome é Rebeca Rodrigues do Nascimento e estou empolgada em compartilhar um pouco sobre minha jornada educacional e profissional até agora</p>
-    <h6>Profissional em Mecatrônica e Tecnologia da Informação, cursando o terceiro ano do Ensino Médio na ETEPAM com conclusão técnica em Mecatrônica. 
-Experiência prática em instalação, operação e manutenção de equipamentos industriais, aliada ao domínio de linguagens de programação como HTML, CSS, JavaScript, Python, C++, C e C#.
-Experiência na atualização e gestão de sites via WordPress, com certificações em WordPress e informática. 
-Atualmente, aprofundando conhecimentos em banco de dados, com foco em inovação na interseção entre Mecatrônica e TI.</h6>
-  
+    <header>
+        <h1>Rebeca Rodrigues do Nascimento</h1>
+        <p>Estudante de Sistemas de Informação | Técnica em Mecatrônica</p>
+    </header>
+
+    <main>
+        <section class="fade-in">
+            <h2>Sobre Mim</h2>
+            <p>Tenho 19 anos, sou estudante de <strong>Sistemas de Informação</strong> na Universidade Maurício de Nassau e formada em 
+            <strong>Técnico em Mecatrônica</strong> pela ETEPAM. Atuo na interseção entre <strong>Mecatrônica e TI</strong>, unindo automação, programação e desenvolvimento de software.</p>
+        </section>
+
+        <section class="fade-in">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>Linguagens: HTML, CSS, JavaScript, Python, C, C++, C#, Java, PHP</li>
+                <li>Banco de Dados</li>
+                <li>UX/UI Design</li>
+                <li>WordPress & Figma</li>
+                <li>Automação & Indústria 4.0</li>
+            </ul>
+        </section>
+
+        <section class="fade-in">
+            <h2>Objetivo</h2>
+            <p>Busco aplicar tecnologia de forma inovadora, criando soluções que integrem <strong>software e automação inteligente</strong>, 
+            contribuindo para projetos de <strong>Indústria 4.0 e desenvolvimento web</strong>.</p>
+            <a href="#" class="btn" onclick="mostrarMensagem()">Saiba mais</a>
+        </section>
+    </main>
+
     <footer>
-        <p>Desenvolvido por Rebeca Rodrigues do Nascimento - 2024</p>
+        <p>Desenvolvido por Rebeca Rodrigues do Nascimento - 2025</p>
     </footer>
+
+    <script>
+        // ===== ANIMAÇÃO DE APARECIMENTO =====
+        const elementos = document.querySelectorAll('.fade-in');
+
+        function mostrarElementos() {
+            const windowHeight = window.innerHeight;
+            elementos.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                if (position < windowHeight - 50) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', mostrarElementos);
+        window.addEventListener('load', mostrarElementos);
+
+        // ===== BOTÃO INTERATIVO =====
+        function mostrarMensagem() {
+            alert("Obrigada por visitar meu portfólio! 🚀");
+        }
+    </script>
 </body>
 </html>
